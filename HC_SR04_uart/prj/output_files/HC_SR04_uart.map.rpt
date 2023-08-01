@@ -1,0 +1,870 @@
+Analysis & Synthesis report for HC_SR04_uart
+Sun Jul 30 17:11:30 2023
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: div_clk_us:div_clk_us_inst
+ 13. Parameter Settings for User Entity Instance: trig_driver:trig_driver_inst
+ 14. Parameter Settings for User Entity Instance: echo_driver:echo_driver_inst
+ 15. Parameter Settings for User Entity Instance: uart_driver2:uart_driver2_inst|uart_send:uart_send_inst
+ 16. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div1
+ 17. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod2
+ 18. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div3
+ 19. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod4
+ 20. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div4
+ 21. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod5
+ 22. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div0
+ 23. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod1
+ 24. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div2
+ 25. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod3
+ 26. Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod0
+ 27. Port Connectivity Checks: "uart_driver2:uart_driver2_inst|uart_send:uart_send_inst"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jul 30 17:11:30 2023           ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
+; Revision Name                      ; HC_SR04_uart                                    ;
+; Top-level Entity Name              ; HC_SR04_uart                                    ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 1,676                                           ;
+;     Total combinational functions  ; 1,670                                           ;
+;     Dedicated logic registers      ; 129                                             ;
+; Total registers                    ; 129                                             ;
+; Total pins                         ; 6                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE10F17C8       ;                    ;
+; Top-level entity name                                            ; HC_SR04_uart       ; HC_SR04_uart       ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+; ../rtl/uart_send.v               ; yes             ; User Verilog HDL File        ; D:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v                        ;         ;
+; ../rtl/uart_driver2.v            ; yes             ; User Verilog HDL File        ; D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v                     ;         ;
+; ../rtl/trig_driver.v             ; yes             ; User Verilog HDL File        ; D:/aa_Yzg/HC_SR04_uart/rtl/trig_driver.v                      ;         ;
+; ../rtl/HC_SR04_uart.v            ; yes             ; User Verilog HDL File        ; D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v                     ;         ;
+; ../rtl/echo_driver.v             ; yes             ; User Verilog HDL File        ; D:/aa_Yzg/HC_SR04_uart/rtl/echo_driver.v                      ;         ;
+; ../rtl/div_clk_us.v              ; yes             ; User Verilog HDL File        ; D:/aa_Yzg/HC_SR04_uart/rtl/div_clk_us.v                       ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/fpga18/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/fpga18/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/fpga18/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal180.inc                   ; yes             ; Megafunction                 ; d:/fpga18/quartus/libraries/megafunctions/aglobal180.inc      ;         ;
+; db/lpm_divide_8jm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_8jm.tdf              ;         ;
+; db/sign_div_unsign_0mh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_0mh.tdf         ;         ;
+; db/alt_u_div_k7f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_k7f.tdf               ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/add_sub_7pc.tdf                 ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/add_sub_8pc.tdf                 ;         ;
+; db/lpm_divide_8bm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_8bm.tdf              ;         ;
+; db/sign_div_unsign_tlh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_tlh.tdf         ;         ;
+; db/alt_u_div_e7f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf               ;         ;
+; db/lpm_divide_mkm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_mkm.tdf              ;         ;
+; db/sign_div_unsign_enh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_enh.tdf         ;         ;
+; db/alt_u_div_gaf.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_gaf.tdf               ;         ;
+; db/lpm_divide_pkm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_pkm.tdf              ;         ;
+; db/sign_div_unsign_hnh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_hnh.tdf         ;         ;
+; db/alt_u_div_maf.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_maf.tdf               ;         ;
+; db/lpm_divide_5jm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_5jm.tdf              ;         ;
+; db/lpm_divide_ikm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_ikm.tdf              ;         ;
+; db/sign_div_unsign_anh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_anh.tdf         ;         ;
+; db/alt_u_div_8af.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_8af.tdf               ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 1,676           ;
+;                                             ;                 ;
+; Total combinational functions               ; 1670            ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 334             ;
+;     -- 3 input functions                    ; 424             ;
+;     -- <=2 input functions                  ; 912             ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 1124            ;
+;     -- arithmetic mode                      ; 546             ;
+;                                             ;                 ;
+; Total registers                             ; 129             ;
+;     -- Dedicated logic registers            ; 129             ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 6               ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; sys_rst_n~input ;
+; Maximum fan-out                             ; 111             ;
+; Total fan-out                               ; 4660            ;
+; Average fan-out                             ; 2.57            ;
++---------------------------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                      ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                          ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |HC_SR04_uart                             ; 1670 (0)            ; 129 (0)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |HC_SR04_uart                                                                                                                                ; HC_SR04_uart        ; work         ;
+;    |div_clk_us:div_clk_us_inst|           ; 12 (12)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|div_clk_us:div_clk_us_inst                                                                                                     ; div_clk_us          ; work         ;
+;    |echo_driver:echo_driver_inst|         ; 38 (38)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|echo_driver:echo_driver_inst                                                                                                   ; echo_driver         ; work         ;
+;    |trig_driver:trig_driver_inst|         ; 29 (29)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|trig_driver:trig_driver_inst                                                                                                   ; trig_driver         ; work         ;
+;    |uart_driver2:uart_driver2_inst|       ; 1591 (77)           ; 68 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst                                                                                                 ; uart_driver2        ; work         ;
+;       |lpm_divide:Div0|                   ; 187 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_5jm:auto_generated|  ; 187 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div0|lpm_divide_5jm:auto_generated                                                   ; lpm_divide_5jm      ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 187 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div0|lpm_divide_5jm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;                |alt_u_div_e7f:divider|    ; 187 (187)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div0|lpm_divide_5jm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider ; alt_u_div_e7f       ; work         ;
+;       |lpm_divide:Div1|                   ; 246 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_8jm:auto_generated|  ; 246 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div1|lpm_divide_8jm:auto_generated                                                   ; lpm_divide_8jm      ; work         ;
+;             |sign_div_unsign_0mh:divider| ; 246 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div1|lpm_divide_8jm:auto_generated|sign_div_unsign_0mh:divider                       ; sign_div_unsign_0mh ; work         ;
+;                |alt_u_div_k7f:divider|    ; 246 (246)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div1|lpm_divide_8jm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_k7f:divider ; alt_u_div_k7f       ; work         ;
+;       |lpm_divide:Div2|                   ; 248 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ikm:auto_generated|  ; 248 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div2|lpm_divide_ikm:auto_generated                                                   ; lpm_divide_ikm      ; work         ;
+;             |sign_div_unsign_anh:divider| ; 248 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div2|lpm_divide_ikm:auto_generated|sign_div_unsign_anh:divider                       ; sign_div_unsign_anh ; work         ;
+;                |alt_u_div_8af:divider|    ; 248 (248)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div2|lpm_divide_ikm:auto_generated|sign_div_unsign_anh:divider|alt_u_div_8af:divider ; alt_u_div_8af       ; work         ;
+;       |lpm_divide:Div3|                   ; 166 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_mkm:auto_generated|  ; 166 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div3|lpm_divide_mkm:auto_generated                                                   ; lpm_divide_mkm      ; work         ;
+;             |sign_div_unsign_enh:divider| ; 166 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div3|lpm_divide_mkm:auto_generated|sign_div_unsign_enh:divider                       ; sign_div_unsign_enh ; work         ;
+;                |alt_u_div_gaf:divider|    ; 166 (166)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div3|lpm_divide_mkm:auto_generated|sign_div_unsign_enh:divider|alt_u_div_gaf:divider ; alt_u_div_gaf       ; work         ;
+;       |lpm_divide:Div4|                   ; 54 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div4                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_pkm:auto_generated|  ; 54 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div4|lpm_divide_pkm:auto_generated                                                   ; lpm_divide_pkm      ; work         ;
+;             |sign_div_unsign_hnh:divider| ; 54 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div4|lpm_divide_pkm:auto_generated|sign_div_unsign_hnh:divider                       ; sign_div_unsign_hnh ; work         ;
+;                |alt_u_div_maf:divider|    ; 54 (54)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Div4|lpm_divide_pkm:auto_generated|sign_div_unsign_hnh:divider|alt_u_div_maf:divider ; alt_u_div_maf       ; work         ;
+;       |lpm_divide:Mod0|                   ; 190 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_8bm:auto_generated|  ; 190 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod0|lpm_divide_8bm:auto_generated                                                   ; lpm_divide_8bm      ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 190 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod0|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;                |alt_u_div_e7f:divider|    ; 190 (190)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod0|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider ; alt_u_div_e7f       ; work         ;
+;       |lpm_divide:Mod1|                   ; 151 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_8bm:auto_generated|  ; 151 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod1|lpm_divide_8bm:auto_generated                                                   ; lpm_divide_8bm      ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 151 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod1|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;                |alt_u_div_e7f:divider|    ; 151 (151)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod1|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider ; alt_u_div_e7f       ; work         ;
+;       |lpm_divide:Mod2|                   ; 122 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_8bm:auto_generated|  ; 122 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated                                                   ; lpm_divide_8bm      ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 122 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;                |alt_u_div_e7f:divider|    ; 122 (122)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider ; alt_u_div_e7f       ; work         ;
+;       |lpm_divide:Mod3|                   ; 80 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_8bm:auto_generated|  ; 80 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated                                                   ; lpm_divide_8bm      ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 80 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;                |alt_u_div_e7f:divider|    ; 80 (80)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider ; alt_u_div_e7f       ; work         ;
+;       |lpm_divide:Mod4|                   ; 24 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod4                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_8bm:auto_generated|  ; 24 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod4|lpm_divide_8bm:auto_generated                                                   ; lpm_divide_8bm      ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 24 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod4|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;                |alt_u_div_e7f:divider|    ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|lpm_divide:Mod4|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider ; alt_u_div_e7f       ; work         ;
+;       |uart_send:uart_send_inst|          ; 46 (46)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|uart_send:uart_send_inst                                                                        ; uart_send           ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------------+----------------------------------------+
+; Register name                               ; Reason for Removal                     ;
++---------------------------------------------+----------------------------------------+
+; uart_driver2:uart_driver2_inst|point_3[2,3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2       ;                                        ;
++---------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 129   ;
+; Number of registers using Synchronous Clear  ; 44    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 110   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 18    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Inverted Register Statistics                                              ;
++-----------------------------------------------------------------+---------+
+; Inverted Register                                               ; Fan out ;
++-----------------------------------------------------------------+---------+
+; uart_driver2:uart_driver2_inst|uart_send:uart_send_inst|UART_tx ; 2       ;
+; Total number of inverted registers = 1                          ;         ;
++-----------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |HC_SR04_uart|trig_driver:trig_driver_inst|cnt[18]                               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|xcnt[2]                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |HC_SR04_uart|uart_driver2:uart_driver2_inst|uart_send:uart_send_inst|cnt_bit[3] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |HC_SR04_uart|echo_driver:echo_driver_inst|cnt[1]                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_clk_us:div_clk_us_inst ;
++----------------+--------+-----------------------------------------------+
+; Parameter Name ; Value  ; Type                                          ;
++----------------+--------+-----------------------------------------------+
+; MAX_us         ; 110001 ; Unsigned Binary                               ;
++----------------+--------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: trig_driver:trig_driver_inst ;
++----------------+---------------------+------------------------------------+
+; Parameter Name ; Value               ; Type                               ;
++----------------+---------------------+------------------------------------+
+; T              ; 1001001001111011111 ; Unsigned Binary                    ;
++----------------+---------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: echo_driver:echo_driver_inst ;
++----------------+------------------+---------------------------------------+
+; Parameter Name ; Value            ; Type                                  ;
++----------------+------------------+---------------------------------------+
+; T_MAX          ; 1110101001011111 ; Unsigned Binary                       ;
++----------------+------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_driver2:uart_driver2_inst|uart_send:uart_send_inst ;
++----------------+----------------------------+--------------------------------------------------------+
+; Parameter Name ; Value                      ; Type                                                   ;
++----------------+----------------------------+--------------------------------------------------------+
+; CLK            ; 10111110101111000010000000 ; Unsigned Binary                                        ;
+; BAUD           ; 11100001000000000          ; Unsigned Binary                                        ;
++----------------+----------------------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div1 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 7              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_8jm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod2 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_8bm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div3 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 14             ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_mkm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod4 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_8bm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div4 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 17             ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_pkm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod5 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_8bm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_5jm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_8bm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Div2 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 10             ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_ikm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod3 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_8bm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: uart_driver2:uart_driver2_inst|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                  ;
++------------------------+----------------+-------------------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                               ;
+; CBXI_PARAMETER         ; lpm_divide_8bm ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                        ;
++------------------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "uart_driver2:uart_driver2_inst|uart_send:uart_send_inst" ;
++------------+-------+----------+-----------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                             ;
++------------+-------+----------+-----------------------------------------------------+
+; data_in[7] ; Input ; Info     ; Stuck at GND                                        ;
++------------+-------+----------+-----------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 6                           ;
+; cycloneiii_ff         ; 129                         ;
+;     CLR               ; 67                          ;
+;     CLR SCLR          ; 25                          ;
+;     ENA CLR           ; 18                          ;
+;     SCLR              ; 19                          ;
+; cycloneiii_lcell_comb ; 1671                        ;
+;     arith             ; 546                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 125                         ;
+;         3 data inputs ; 411                         ;
+;     normal            ; 1125                        ;
+;         0 data inputs ; 87                          ;
+;         1 data inputs ; 27                          ;
+;         2 data inputs ; 664                         ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 334                         ;
+;                       ;                             ;
+; Max LUT depth         ; 36.00                       ;
+; Average LUT depth     ; 24.12                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+    Info: Processing started: Sun Jul 30 17:11:19 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HC_SR04_uart -c HC_SR04_uart
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /aa_yzg/hc_sr04_uart/rtl/uart_send.v
+    Info (12023): Found entity 1: uart_send File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v Line: 114
+Info (12021): Found 1 design units, including 1 entities, in source file /aa_yzg/hc_sr04_uart/rtl/uart_driver2.v
+    Info (12023): Found entity 1: uart_driver2 File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /aa_yzg/hc_sr04_uart/rtl/trig_driver.v
+    Info (12023): Found entity 1: trig_driver File: D:/aa_Yzg/HC_SR04_uart/rtl/trig_driver.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /aa_yzg/hc_sr04_uart/rtl/hc_sr04_uart.v
+    Info (12023): Found entity 1: HC_SR04_uart File: D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /aa_yzg/hc_sr04_uart/rtl/echo_driver.v
+    Info (12023): Found entity 1: echo_driver File: D:/aa_Yzg/HC_SR04_uart/rtl/echo_driver.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /aa_yzg/hc_sr04_uart/rtl/div_clk_us.v
+    Info (12023): Found entity 1: div_clk_us File: D:/aa_Yzg/HC_SR04_uart/rtl/div_clk_us.v Line: 5
+Info (12127): Elaborating entity "HC_SR04_uart" for the top level hierarchy
+Info (12128): Elaborating entity "div_clk_us" for hierarchy "div_clk_us:div_clk_us_inst" File: D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v Line: 18
+Info (12128): Elaborating entity "trig_driver" for hierarchy "trig_driver:trig_driver_inst" File: D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v Line: 25
+Info (12128): Elaborating entity "echo_driver" for hierarchy "echo_driver:echo_driver_inst" File: D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v Line: 34
+Warning (10036): Verilog HDL or VHDL warning at echo_driver.v(20): object "echo_pos" assigned a value but never read File: D:/aa_Yzg/HC_SR04_uart/rtl/echo_driver.v Line: 20
+Info (12128): Elaborating entity "uart_driver2" for hierarchy "uart_driver2:uart_driver2_inst" File: D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v Line: 43
+Warning (10230): Verilog HDL assignment warning at uart_driver2.v(43): truncated value with size 32 to match size of target (26) File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 43
+Warning (10230): Verilog HDL assignment warning at uart_driver2.v(58): truncated value with size 32 to match size of target (4) File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 58
+Warning (10230): Verilog HDL assignment warning at uart_driver2.v(59): truncated value with size 32 to match size of target (4) File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 59
+Warning (10230): Verilog HDL assignment warning at uart_driver2.v(60): truncated value with size 32 to match size of target (4) File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 60
+Warning (10230): Verilog HDL assignment warning at uart_driver2.v(62): truncated value with size 32 to match size of target (4) File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 62
+Warning (10230): Verilog HDL assignment warning at uart_driver2.v(63): truncated value with size 32 to match size of target (4) File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 63
+Warning (10230): Verilog HDL assignment warning at uart_driver2.v(64): truncated value with size 32 to match size of target (4) File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 64
+Info (12128): Elaborating entity "uart_send" for hierarchy "uart_driver2:uart_driver2_inst|uart_send:uart_send_inst" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 128
+Info (278001): Inferred 11 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Div1" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Mod2" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Div3" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Mod4" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Div4" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 64
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Mod5" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 64
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Div0" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 59
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Mod1" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 59
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Div2" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 62
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Mod3" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 62
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "uart_driver2:uart_driver2_inst|Mod0" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 58
+Info (12130): Elaborated megafunction instantiation "uart_driver2:uart_driver2_inst|lpm_divide:Div1" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 60
+Info (12133): Instantiated megafunction "uart_driver2:uart_driver2_inst|lpm_divide:Div1" with the following parameter: File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 60
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_8jm.tdf
+    Info (12023): Found entity 1: lpm_divide_8jm File: D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_8jm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_0mh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_0mh File: D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_0mh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k7f.tdf
+    Info (12023): Found entity 1: alt_u_div_k7f File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_k7f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: D:/aa_Yzg/HC_SR04_uart/prj/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: D:/aa_Yzg/HC_SR04_uart/prj/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "uart_driver2:uart_driver2_inst|lpm_divide:Mod2" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 60
+Info (12133): Instantiated megafunction "uart_driver2:uart_driver2_inst|lpm_divide:Mod2" with the following parameter: File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 60
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_8bm.tdf
+    Info (12023): Found entity 1: lpm_divide_8bm File: D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_8bm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_tlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_tlh File: D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_tlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e7f.tdf
+    Info (12023): Found entity 1: alt_u_div_e7f File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "uart_driver2:uart_driver2_inst|lpm_divide:Div3" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 63
+Info (12133): Instantiated megafunction "uart_driver2:uart_driver2_inst|lpm_divide:Div3" with the following parameter: File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 63
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mkm.tdf
+    Info (12023): Found entity 1: lpm_divide_mkm File: D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_mkm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_enh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_enh File: D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_enh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_gaf.tdf
+    Info (12023): Found entity 1: alt_u_div_gaf File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_gaf.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "uart_driver2:uart_driver2_inst|lpm_divide:Div4" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 64
+Info (12133): Instantiated megafunction "uart_driver2:uart_driver2_inst|lpm_divide:Div4" with the following parameter: File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 64
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "17"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_pkm.tdf
+    Info (12023): Found entity 1: lpm_divide_pkm File: D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_pkm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_hnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_hnh File: D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_hnh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_maf.tdf
+    Info (12023): Found entity 1: alt_u_div_maf File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_maf.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "uart_driver2:uart_driver2_inst|lpm_divide:Div0" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 59
+Info (12133): Instantiated megafunction "uart_driver2:uart_driver2_inst|lpm_divide:Div0" with the following parameter: File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 59
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5jm.tdf
+    Info (12023): Found entity 1: lpm_divide_5jm File: D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_5jm.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "uart_driver2:uart_driver2_inst|lpm_divide:Div2" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 62
+Info (12133): Instantiated megafunction "uart_driver2:uart_driver2_inst|lpm_divide:Div2" with the following parameter: File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 62
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ikm.tdf
+    Info (12023): Found entity 1: lpm_divide_ikm File: D:/aa_Yzg/HC_SR04_uart/prj/db/lpm_divide_ikm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_anh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_anh File: D:/aa_Yzg/HC_SR04_uart/prj/db/sign_div_unsign_anh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_8af.tdf
+    Info (12023): Found entity 1: alt_u_div_8af File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_8af.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "uart_driver2:uart_driver2_inst|lpm_divide:Mod0" File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 58
+Info (12133): Instantiated megafunction "uart_driver2:uart_driver2_inst|lpm_divide:Mod0" with the following parameter: File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 58
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (13000): Registers with preset signals will power-up high File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v Line: 127
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_13_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 51
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_14_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 56
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_15_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 61
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_16_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 66
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_17_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 71
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod4|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_17_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 71
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_10_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 36
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_11_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 41
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_12_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 46
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_13_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 51
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_14_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 56
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_15_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 61
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_16_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 66
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_17_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 71
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod3|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_18_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 76
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod2|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_18_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 76
+    Info (17048): Logic cell "uart_driver2:uart_driver2_inst|lpm_divide:Mod4|lpm_divide_8bm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider|add_sub_18_result_int[0]~10" File: D:/aa_Yzg/HC_SR04_uart/prj/db/alt_u_div_e7f.tdf Line: 76
+Info (144001): Generated suppressed messages file D:/aa_Yzg/HC_SR04_uart/prj/output_files/HC_SR04_uart.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "uart_rx" File: D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v Line: 5
+Info (21057): Implemented 1682 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 1676 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Sun Jul 30 17:11:30 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:21
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/aa_Yzg/HC_SR04_uart/prj/output_files/HC_SR04_uart.map.smsg.
+
+

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Jul 30 17:11:38 2023
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : HC_SR04_uart
+Top-level Entity Name : HC_SR04_uart
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 1,674 / 10,320 ( 16 % )
+    Total combinational functions : 1,670 / 10,320 ( 16 % )
+    Dedicated logic registers : 129 / 10,320 ( 1 % )
+Total registers : 129
+Total pins : 6 / 180 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 423,936 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,175 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/aa_Yzg/HC_SR04_uart/prj/simulation/modelsim
+T_opt
+!s110 1690619644
+VAU]TU98:Xf54DiD<P0A2W0
+04 15 4 work tb_HC_SR04_uart fast 0
+=1-00e04c78cf4c-64c4cefc-299-1b660
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;10.5;63
+vdiv_clk_us
+Z2 !s110 1690619637
+!i10b 1
+!s100 997EzWEjR>Oj@0[P<h?U@3
+ICL^S^a95[f8Z>`NV;`Rcg0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1690536417
+8D:/aa_Yzg/HC_SR04_uart/rtl/div_clk_us.v
+FD:/aa_Yzg/HC_SR04_uart/rtl/div_clk_us.v
+L0 5
+Z4 OL;L;10.5;63
+r1
+!s85 0
+31
+Z5 !s108 1690619637.000000
+!s107 D:/aa_Yzg/HC_SR04_uart/rtl/div_clk_us.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/aa_Yzg/HC_SR04_uart/rtl|D:/aa_Yzg/HC_SR04_uart/rtl/div_clk_us.v|
+!i113 0
+Z6 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 !s92 -vlog01compat -work work +incdir+D:/aa_Yzg/HC_SR04_uart/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vecho_driver
+R2
+!i10b 1
+!s100 iAE4AON2V`YP]L1;ohbUj2
+Ic`I706P8_`HiYTLR=mCNP3
+R3
+R0
+w1690541997
+8D:/aa_Yzg/HC_SR04_uart/rtl/echo_driver.v
+FD:/aa_Yzg/HC_SR04_uart/rtl/echo_driver.v
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/aa_Yzg/HC_SR04_uart/rtl/echo_driver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/aa_Yzg/HC_SR04_uart/rtl|D:/aa_Yzg/HC_SR04_uart/rtl/echo_driver.v|
+!i113 0
+R6
+R7
+R1
+vHC_SR04_uart
+R2
+!i10b 1
+!s100 Fe:VK1JP5U74MOCa=e:OS3
+I2>Z0?FZ2eT89a34=OABcI0
+R3
+R0
+w1690549375
+8D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v
+FD:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/aa_Yzg/HC_SR04_uart/rtl|D:/aa_Yzg/HC_SR04_uart/rtl/HC_SR04_uart.v|
+!i113 0
+R6
+R7
+R1
+n@h@c_@s@r04_uart
+vtb_HC_SR04_uart
+R2
+!i10b 1
+!s100 PTjO;W9J0AG^]zigJiOO^3
+IXGm8<SQRYLEkMfZ]Xoc8j3
+R3
+R0
+w1690619625
+8D:/aa_Yzg/HC_SR04_uart/prj/../tb/tb_HC_SR04_uart.v
+FD:/aa_Yzg/HC_SR04_uart/prj/../tb/tb_HC_SR04_uart.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/aa_Yzg/HC_SR04_uart/prj/../tb/tb_HC_SR04_uart.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/aa_Yzg/HC_SR04_uart/prj/../tb|D:/aa_Yzg/HC_SR04_uart/prj/../tb/tb_HC_SR04_uart.v|
+!i113 0
+R6
+!s92 -vlog01compat -work work +incdir+D:/aa_Yzg/HC_SR04_uart/prj/../tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+ntb_@h@c_@s@r04_uart
+vtrig_driver
+R2
+!i10b 1
+!s100 gcM9mVLK^IWOk4Q`PL]mI3
+Ig8P1nNS[F5FkNAE8698R40
+R3
+R0
+w1690532549
+8D:/aa_Yzg/HC_SR04_uart/rtl/trig_driver.v
+FD:/aa_Yzg/HC_SR04_uart/rtl/trig_driver.v
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/aa_Yzg/HC_SR04_uart/rtl/trig_driver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/aa_Yzg/HC_SR04_uart/rtl|D:/aa_Yzg/HC_SR04_uart/rtl/trig_driver.v|
+!i113 0
+R6
+R7
+R1
+vuart_driver2
+R2
+!i10b 1
+!s100 ]IUCjK<ZiI`VcS3=<oAU;3
+IhY_dB]WebcYY2>dQY]^lN1
+R3
+R0
+w1690549231
+8D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v
+FD:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/aa_Yzg/HC_SR04_uart/rtl|D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v|
+!i113 0
+R6
+R7
+R1
+vuart_send
+R2
+!i10b 1
+!s100 hTkilME1h53UU]fL@Gm731
+I;Pm<NXb1XUlM9[e:b2TUN2
+R3
+R0
+w1690549436
+8D:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v
+FD:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/aa_Yzg/HC_SR04_uart/rtl|D:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v|
+!i113 0
+R6
+R7
+R1

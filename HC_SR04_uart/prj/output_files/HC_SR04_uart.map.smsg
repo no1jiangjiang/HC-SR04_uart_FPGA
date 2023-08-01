@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at uart_send.v(116): object "CLK" differs only in case from object "clk" in the same scope File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_send.v Line: 116
+Warning (10268): Verilog HDL information at uart_driver2.v(35): always construct contains both blocking and non-blocking assignments File: D:/aa_Yzg/HC_SR04_uart/rtl/uart_driver2.v Line: 35
